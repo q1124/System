@@ -5,6 +5,10 @@
 
 # Technique & skill
 * node.js
+* postman
+* express
+* nodemon
+* [MongoDB](https://www.mongodb.com/)
 
 # plugin
 * [body-parser](https://israynotarray.com/nodejs/20210326/2926076225/)
