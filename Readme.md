@@ -1,7 +1,4 @@
 # System_backend
-* express
-* nodemon
-* [MongoDB](https://www.mongodb.com/)
 
 # Technique & skill
 * node.js
