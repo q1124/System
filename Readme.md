@@ -15,10 +15,18 @@
 * [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 * [passport-jwt](https://www.npmjs.com/package/passport-jwt)
 * passport 
+* [concurrently](https://www.npmjs.com/package/concurrently)
 
 
 ```
   "scripts": {
+    ---- 前後端模塊 ----
+    "client-install": "npm install --prefix client",
+    ---- 起動前端模塊 ----
+    "client": "npm start --prefix client",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    ---- 啟用前後端 ----
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   }
+
