@@ -1,12 +1,3 @@
 <template>
-  <div class="index">
-    kk
-  </div>
+  <div>初始化</div>
 </template>
-
-<script>
-
-export default {
-  name: 'index'
-}
-</script>

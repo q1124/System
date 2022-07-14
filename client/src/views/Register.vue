@@ -59,6 +59,14 @@
 export default {
   name: 'index',
   data () {
+    // 驗證密碼
+    const validatePass = (rule, value, callback) => {
+      if (value !== this.registerUser.password) {
+        callback(new Error('密碼不一致'))
+      } else {
+        callback()
+      }
+    }
     return {
       registerUser: {
         name: '',
@@ -66,7 +74,78 @@ export default {
         password: '',
         checkPassword: '',
         identity: ''
+      },
+      rules: {
+        name: [
+          {
+            required: true,
+            message: '名稱不能空白',
+            // 何時觸發
+            trigger: 'blur'
+          },
+          {
+            min: 2,
+            max: 30,
+            message: '長度不符合',
+            // 何時觸發
+            trigger: 'blur'
+          }
+        ],
+        email: [
+          {
+            type: 'email',
+            required: true,
+            message: '信箱格式不正確',
+            trigger: 'blur'
+          }
+        ],
+        password: [
+          {
+            required: true,
+            message: '密碼不能為空',
+            trigger: 'blur'
+          },
+          {
+            min: 6,
+            max: 30,
+            message: '長度不符合'
+          }
+        ],
+        checkPassword: [
+          {
+            required: true,
+            message: '確認密碼不能為空',
+            trigger: 'blur'
+          },
+          {
+            min: 6,
+            max: 30,
+            message: '長度不符合'
+          },
+          // 驗證規則
+          {
+            validator: validatePass,
+            trigger: 'blur'
+          }
+        ]
       }
+    }
+  },
+  methods: {
+    submitForm (Form) {
+      this.$refs[Form].validate(valid => {
+        if (valid) {
+          this.$axios.post('/api/users/register', this.registerUser)
+            .then(res => {
+              this.$message({
+                message: '帳號註冊成功',
+                type: 'success'
+              })
+            })
+
+          this.$router.push('/login')
+        }
+      })
     }
   }
 }
