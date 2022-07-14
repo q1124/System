@@ -92,7 +92,7 @@ export default {
               this.$store.dispatch('setUser', decoded)
             })
         }
-        this.$router.push('/index')
+        this.$router.push('/index/home')
       })
     },
     // 判斷是否為空

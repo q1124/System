@@ -33,7 +33,7 @@ router.post('/add', passport.authenticate('jwt', {session: false}), (req, res) =
 // GET api/profiles
 // 查詢所有 profile list
 // @access Private
-router.get('/',passport.authenticate('jwt', {session: false}), (req, res) => {
+router.get('/', (req, res) => {
     Profile.find()
     .then(profile => {
         if(!profile) {

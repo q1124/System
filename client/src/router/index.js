@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+// container
+const DefaultContainer = () => import('../containers/defaultContainer.vue')
+
 const routes = [
   {
     path: '/',
@@ -14,11 +17,28 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: () => import('@/views/login')
+      }
+    ]
+  },
+  {
+    path: '/index',
+    redirect: '/index/home',
+    component: DefaultContainer,
+    children: [
+      {
+        path: 'home',
+        name: 'home',
+        component: () => import('@/views/index')
       },
       {
-        path: '/index',
-        name: 'Index',
-        component: () => import('@/views/index')
+        path: 'info',
+        name: 'info',
+        component: () => import('@/views/info')
+      },
+      {
+        path: 'list',
+        name: 'List',
+        component: () => import('@/views/foundList')
       }
     ]
   },

@@ -2,7 +2,7 @@
 # Technique & skill
 * Vue CLI3
 * javaScript
-* [element ui](https://stackoverflow.com/questions/71644855/how-to-add-element-ui-to-vue-3) npm install element-plus --save
+* [element ui plus](https://stackoverflow.com/questions/71644855/how-to-add-element-ui-to-vue-3) npm install element-plus --save
 
 # plugin
 * axios

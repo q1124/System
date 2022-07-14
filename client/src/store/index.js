@@ -19,8 +19,14 @@ const actions = {
   setAuthenticated: ({ commit }, isAuthenticated) => {
     commit('SET_AUTHENTICATED', isAuthenticated)
   },
+  // TODO: 新增解析的內容
   setUser: ({ commit }, user) => {
     commit('SET_USER', user)
+  },
+  // logout
+  clearCurrentState: ({ commit }) => {
+    commit('SET_AUTHENTICATED', false)
+    commit('SET_USER', null)
   }
 }
 
