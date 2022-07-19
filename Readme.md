@@ -4,7 +4,7 @@
 * node.js
 * postman
 * express
-* nodemon
+* [nodemon](sudo npm install -g --force nodemon)
 * [swagger](https://app.swaggerhub.com/apis-docs/q1124/System_backend/1.0.0)
 * [MongoDB](https://www.mongodb.com/)
 
